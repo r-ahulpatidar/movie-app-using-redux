@@ -10,9 +10,9 @@ const Header = () => {
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
       if(searchValue) {
-        dispatch(searchMovieAction(searchValue))
+        dispatch(searchMovieAction(searchValue));
       }
-    }, 500);
+    }, 700);
     return () => {
       clearTimeout(debounceTimer)
     }
@@ -42,9 +42,10 @@ const Header = () => {
         <input
           type="text"
           value={searchValue}
-          placeholder="Search"
+          placeholder="Search..."
           onChange={handleChange}
-          className="bg-transparent border-2 border-black rounded-3xl text-base text-white px-4 py-2 placeholder:bg-indigo-900 focus:outline-none focus:bg-blue-950"
+          // className="bg-transparent border-2 border-black rounded-3xl text-base text-white px-4 py-2 placeholder:bg-indigo-900 focus:outline-none"
+          className='bg-transparent border-2 text-white placeholder:text-white border-black rounded-3xl focus:bg-blue-950 focus:outline-none px-4 py-2'
         />
       </form>
     </header>
